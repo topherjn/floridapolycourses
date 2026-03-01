@@ -16,7 +16,9 @@ int main(void)
 
 int factorial(int num)
 {
+    /* base case */
     if(num <= 1) return 1;
 
+    /* recursive part */
     return num * factorial(num - 1);
 }

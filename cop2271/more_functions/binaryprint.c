@@ -16,7 +16,9 @@ int main(void)
 
 void print_binary(int n)
 {
+    /* recursive part */
     if(n > 1) print_binary(n / 2);
 
+    /* base case */
     printf("%d", n % 2);
 }

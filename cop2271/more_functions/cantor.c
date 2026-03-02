@@ -25,7 +25,7 @@ int main() {
     
     for (int r = 0; r < MAX_DEPTH; r++) {
         for (int c = 0; c < SIZE; c++) {
-            grid[r][c] = '*';
+            grid[r][c] = '_';
         }
         grid[r][SIZE] = '\0';
     }

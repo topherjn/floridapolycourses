@@ -17,6 +17,8 @@ int main(void)
     return 0;
 }
 
+/* This is awful.  A function should have a single well-defined
+task. Interaction with the user should be done elsewhere. */
 void process_rectangle() {
     int w, h;
 

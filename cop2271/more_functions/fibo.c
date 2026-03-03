@@ -6,6 +6,7 @@ int main(void)
     /* generates the first 20 fibonacci numbers */
     for(int i = 1; i < 20; i++) printf("%d\n", fibo(i));
 
+    #if 0
     double phi = 0.0;
 
     /* as fibos approach infinity the ratio of the nth fibo / 
@@ -15,6 +16,7 @@ int main(void)
         phi = (double) fibo(i) / fibo(i-1);
         printf("%f\n", phi);
     }
+    #endif
 
     return 0;
 }

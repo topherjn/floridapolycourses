@@ -3,11 +3,13 @@ int fibo(int nth_fibonacci);
 
 int main(void)
 {
+    /* generates the first 20 fibonacci numbers */
     for(int i = 1; i < 20; i++) printf("%d\n", fibo(i));
 
     double phi = 0.0;
 
-    
+    /* as fibos approach infinity the ratio of the nth fibo / 
+       the nth+1 fibo approaches phi */
     for(int i = 3; i < 20; i++)
     {
         phi = (double) fibo(i) / fibo(i-1);

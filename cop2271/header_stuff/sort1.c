@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include "mysort.h"
 
-int *sort(int *numbers, int size)
+void sort(int *numbers, int size)
 {
     for(int i = 0; i < size - 1; i++)
     {
@@ -15,6 +15,4 @@ int *sort(int *numbers, int size)
             }
         }
     }
-    
-    return numbers;
 }

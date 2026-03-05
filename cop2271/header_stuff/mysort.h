@@ -1,1 +1,1 @@
-int *sort(int* numbers, int size);
+void sort(int* numbers, int size);

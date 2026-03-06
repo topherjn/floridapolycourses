@@ -3,7 +3,7 @@
 #include<time.h>
 #include"mysort.h"
 
-/* functin to print array */
+/* function to print array */
 void print_array(int *array, int size);
 
 int main(void)

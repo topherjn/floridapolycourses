@@ -1,7 +1,12 @@
 #include<stdio.h>
 #include "mysort.h"
 
+/* this variable is declared extern
+   in mysort.h */
 long long number_of_passes = 0;
+
+/* this variable has file-level scope just
+   for sort1.c (this file) */
 int number_of_swaps = 0;
 
 void print_number_of_swaps();

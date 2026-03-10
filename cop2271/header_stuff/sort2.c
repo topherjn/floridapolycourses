@@ -26,6 +26,7 @@ void shuffle(int arr[], int n) {
         arr[i] = arr[randIndex];
         arr[randIndex] = temp;
     }
+    
 }
 
 // Bogosort: keep shuffling until sorted

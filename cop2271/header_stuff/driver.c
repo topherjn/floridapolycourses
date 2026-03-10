@@ -15,7 +15,8 @@ int main(void)
     int array[ARRAY_SIZE];
 
     /* initialize array with random integers, 1 to 100 */
-    for(int i=0; i<ARRAY_SIZE;i++) array[i] = rand() % 100 + 1;
+    for(int i=0; i<ARRAY_SIZE;i++) 
+       array[i] = rand() % 100 + 1;
 
     //printf("i == %d outside of the loop.\n", i);
 

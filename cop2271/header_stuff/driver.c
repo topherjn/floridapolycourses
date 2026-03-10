@@ -25,14 +25,14 @@ int main(void)
 
     /* show array before sort */
     printf("Unsorted array: ");
-    print_array(array, 10);
+    print_array(array, ARRAY_SIZE);
 
     /* call the sorting procedure */
     sort(array, ARRAY_SIZE);
 
     /* show the successful sort */
     printf("Sorted array: ");
-    print_array(array, 10);
+    print_array(array, ARRAY_SIZE);
 
     printf("Sorted in %llu passes\n", number_of_passes);
 

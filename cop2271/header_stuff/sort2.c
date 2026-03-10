@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include "mysort.h"
 
-int number_of_passes = 0;
+long long number_of_passes = 1;
 
 // Function to check if the array is sorted in ascending order
 bool isSorted(int arr[], int n) {

@@ -29,7 +29,7 @@ int main(void)
     printf("Sorted array: ");
     print_array(array, 10);
 
-    printf("Sorted in %d passes\n", number_of_passes);
+    printf("Sorted in %llu passes\n", number_of_passes);
 
     return 0;
 }

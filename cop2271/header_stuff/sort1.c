@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include "mysort.h"
 
-int number_of_passes = 0;
+long long number_of_passes = 0;
 int number_of_swaps = 0;
 
 void print_number_of_swaps();

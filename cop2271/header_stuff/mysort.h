@@ -3,6 +3,6 @@
 
 void sort(int* numbers, int size);
 
-extern int number_of_passes;
+extern long long number_of_passes;
 
 #endif

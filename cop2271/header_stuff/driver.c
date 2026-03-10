@@ -41,7 +41,7 @@ int main(void)
 
 void print_array(int *array, int size)
 {
-    for(int i = 0; i < ARRAY_SIZE; i++) 
+    for(int i = 0; i < size; i++) 
         printf("%d ", array[i]);
     printf("\n");
 }

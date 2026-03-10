@@ -8,6 +8,8 @@
 /* function to print array */
 void print_array(int *array, int size);
 
+//long long number_of_passes = 0;
+
 int main(void)
 {
     srand((unsigned int) time(NULL));

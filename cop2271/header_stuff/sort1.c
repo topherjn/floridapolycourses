@@ -2,6 +2,9 @@
 #include "mysort.h"
 
 int number_of_passes = 0;
+int number_of_swaps = 0;
+
+void print_number_of_swaps();
 
 void sort(int *numbers, int size)
 {
@@ -12,10 +15,17 @@ void sort(int *numbers, int size)
             number_of_passes++;
             if(numbers[j] > numbers[j+1])
             {
+                number_of_swaps++;
                 int temp = numbers[j];
                 numbers[j] = numbers[j+1];
                 numbers[j+1] = temp;
             }
         }
     }
+    print_number_of_swaps();
+}
+
+void print_number_of_swaps()
+{
+    printf("The number of swaps was %d\n", number_of_swaps);
 }

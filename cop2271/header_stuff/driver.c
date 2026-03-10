@@ -3,7 +3,7 @@
 #include<time.h>
 #include"mysort.h"
 
-#define ARRAY_SIZE 12
+
 
 /* function to print array */
 void print_array(int *array, int size);
@@ -12,6 +12,8 @@ void print_array(int *array, int size);
 
 int main(void)
 {
+    const int ARRAY_SIZE = 12;
+
     srand((unsigned int) time(NULL));
 
     int array[ARRAY_SIZE];

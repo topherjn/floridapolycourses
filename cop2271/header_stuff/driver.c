@@ -3,6 +3,8 @@
 #include<time.h>
 #include"mysort.h"
 
+#define ARRAY_SIZE 12
+
 /* function to print array */
 void print_array(int *array, int size);
 
@@ -10,12 +12,12 @@ int main(void)
 {
     srand((unsigned int) time(NULL));
 
-    int array[10];
+    int array[ARRAY_SIZE];
 
     /* initialize array with random integers, 1 to 100 */
-    for(int i=0; i<10;i++) array[i] = rand() % 100 + 1;
+    for(int i=0; i<ARRAY_SIZE;i++) array[i] = rand() % 100 + 1;
 
-    //for(int i=0;i<10;i++) array[i] = i;
+    //for(int i=0;i<ARRAY_SIZE;i++) array[i] = i;
     
 
     /* show array before sort */
@@ -23,7 +25,7 @@ int main(void)
     print_array(array, 10);
 
     /* call the sorting procedure */
-    sort(array, 10);
+    sort(array, ARRAY_SIZE);
 
     /* show the successful sort */
     printf("Sorted array: ");
@@ -36,7 +38,7 @@ int main(void)
 
 void print_array(int *array, int size)
 {
-    for(int i = 0; i < 10; i++) 
+    for(int i = 0; i < ARRAY_SIZE; i++) 
         printf("%d ", array[i]);
     printf("\n");
 }

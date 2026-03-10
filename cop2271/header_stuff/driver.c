@@ -15,6 +15,9 @@ int main(void)
     /* initialize array with random integers, 1 to 100 */
     for(int i=0; i<10;i++) array[i] = rand() % 100 + 1;
 
+    //for(int i=0;i<10;i++) array[i] = i;
+    
+
     /* show array before sort */
     printf("Unsorted array: ");
     print_array(array, 10);
@@ -25,6 +28,8 @@ int main(void)
     /* show the successful sort */
     printf("Sorted array: ");
     print_array(array, 10);
+
+    printf("Sorted in %d passes\n", number_of_passes);
 
     return 0;
 }

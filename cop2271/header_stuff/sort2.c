@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include "mysort.h"
 
+int number_of_passes = 0;
+
 // Function to check if the array is sorted in ascending order
 bool isSorted(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
@@ -17,6 +19,7 @@ bool isSorted(int arr[], int n) {
 // Function to shuffle the array randomly
 void shuffle(int arr[], int n) {
     for (int i = 0; i < n; i++) {
+        number_of_passes++;
         int randIndex = rand() % n;
         int temp = arr[i];
         arr[i] = arr[randIndex];

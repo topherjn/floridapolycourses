@@ -13,5 +13,9 @@ int main(void)
 
     printf("%d\n", num_array[3]);
 
+    float measurements[5] = {2.3,-1.0,3,3.14, -10.1};
+
+    for(int i = 0; i < 5; i++) printf("%.1f\n", measurements[i]);
+
     return 0;
 }

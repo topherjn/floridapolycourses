@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<math.h>
 
+void print_array(void *array, int size);
+
 int main(void)
 {
     const int ARRAY_SIZE = 5;
@@ -18,7 +20,7 @@ int main(void)
     printf("%d\n", num_array[3]);
 
     /* use an array initializer to populate with floats */
-    float measurements[5] = {2.3,-1.0,3,3.14, -10.1};
+    float measurements[] = {2.3,-1.0,3,3.14, -10.1};
 
     /* traverse, the array, printout out each value */
     for(int i = 0; i < 5; i++) 

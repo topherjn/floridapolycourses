@@ -19,7 +19,7 @@ int main(void)
     /* print out one element */
     printf("%d\n", num_array[3]);
 
-    /* use an array initializer to populate with floats */
+    /* use an array initializer list to populate with floats */
     float measurements[] = {2.3,-1.0,3,3.14, -10.1};
 
     /* traverse, the array, printout out each value */

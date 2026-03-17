@@ -23,18 +23,17 @@ int main(void)
     for(int i = 0; i < 5; i++) 
         printf("num_array[%d] == %.1f\n", i, measurements[i]);
 
-
+    /* array of characters */
     char symbols[5];
 
-    printf("Type a symbol: ");
-    scanf(" %c", &symbols[0]);
-
-    for(int i = 1; i < 5; i++) 
+    /* Get array elements from user input */
+    for(int i = 0; i < 5; i++) 
     {
       printf("Type a symbol: ");
       scanf(" %c", &symbols[i]);  
     }
 
+    /* print out symbols */
     for(int i = 0; i < 5; i++)
     {
         printf("%c", symbols[i]);

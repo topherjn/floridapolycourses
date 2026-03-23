@@ -1,8 +1,6 @@
 #include<stdio.h>
 #include<math.h>
 
-void print_array(void *array, int size);
-
 int main(void)
 {
     const int ARRAY_SIZE = 5;

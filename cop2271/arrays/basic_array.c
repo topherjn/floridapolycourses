@@ -22,7 +22,8 @@ int main(void)
     /* use an array initializer list to populate with floats */
     float measurements[] = {2.3,-1.0,3,3.14, -10.1};
 
-    char characters[] = {'c', ':', ' ', '3', '\n'};
+    /* array of characters (!= a string) */
+    char characters[] = {'c', ':', '.', '\\', '#'};
 
     /* traverse, the array, printout out each value */
     print_array(num_array, ARRAY_SIZE);
@@ -31,6 +32,13 @@ int main(void)
 
     printf("But sizeof() works in main: %d\n", sizeof(num_array));
     printf("(size of array X size of int == 5 * 4 bytes)\n");
+
+    printf("We need to learn about C-type strings: %s\n", characters);
+
+    /* finally, we can kludge element initialization (zeroing out) */
+    double values[100] = {0};
+
+    for(int i = 0; i < 100; i++) printf("[%.1f] ", values[i]);
 
     return 0;
 }

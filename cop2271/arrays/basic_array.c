@@ -20,12 +20,12 @@ int main(void)
 
 
     /* use an array initializer list to populate with floats */
-    float measurements[] = {2.3,-1.0,3,3.14, -10.1};
+    float measurements[] = {2.3,-1.0,3,3.14,-10.1};
 
     /* array of characters (!= a string) */
     char characters[] = {'c', ':', '.', '\\', '#'};
 
-    /* traverse, the array, printout out each value */
+    /* traverse the arrays print out out each value */
     print_array(num_array, ARRAY_SIZE);
     show_array(measurements,ARRAY_SIZE);
     pointer_print_arrays(characters, ARRAY_SIZE);
@@ -43,6 +43,7 @@ int main(void)
     return 0;
 }
 
+/* old-fashioned */
 void print_array(int *arr, int size)
 {
     printf("The old-fashioned normal way:\n");
@@ -53,6 +54,7 @@ void print_array(int *arr, int size)
     }
 }
 
+/* brackets and while */
 void show_array(float ar[], int size)
 {
     printf("The brackets way plus a silly loop and increment\n");
@@ -67,6 +69,7 @@ void show_array(float ar[], int size)
     }
 }
 
+/* pointer arithmetic */
 void pointer_print_arrays(char *parry, int size)
 {
     printf("The pointer way:\n");

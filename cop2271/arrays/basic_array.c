@@ -2,7 +2,8 @@
 #include<math.h>
 
 void print_array(int arr[], int size);
-void show_array(int *arr, int size);
+void show_array(float *arr, int size);
+void pointer_print_arrays(char *parry, int size);
 
 int main(void)
 {
@@ -21,32 +22,53 @@ int main(void)
     /* use an array initializer list to populate with floats */
     float measurements[] = {2.3,-1.0,3,3.14, -10.1};
 
+    char characters[] = {'c', ':', ' ', '3', '\n'};
+
     /* traverse, the array, printout out each value */
-    show_array(num_array,ARRAY_SIZE);
+    print_array(num_array, ARRAY_SIZE);
+    show_array(measurements,ARRAY_SIZE);
+    pointer_print_arrays(characters, ARRAY_SIZE);
 
-    /* array of characters */
-    char symbols[ARRAY_SIZE];
+    printf("But sizeof() works in main: %d\n", sizeof(num_array));
+    printf("(size of array X size of int == 5 * 4 bytes)\n");
 
-  
     return 0;
 }
 
-void print_array(int arr[], int size)
+void print_array(int *arr, int size)
 {
+    printf("The old-fashioned normal way:\n");
+
     for(int i = 0; i < size; ++i)
     {
         printf("arr[%d] = %d\n", i, arr[i]);
     }
 }
 
-void show_array(int *ar, int size)
+void show_array(float ar[], int size)
 {
+    printf("The brackets way plus a silly loop and increment\n");
+
     int i = 0;
 
     while(i < size)
     {
-        int x = ar[i++];
-        printf("%d\n", x);
+        float x = ar[i++];
+        printf("%.3f\n", x);
        
     }
+}
+
+void pointer_print_arrays(char *parry, int size)
+{
+    printf("The pointer way:\n");
+
+    for(char *p = parry; p < parry + size; p++)
+    {
+        printf("%c\n", *p);
+    }
+
+    printf("N.B. sizeof() doesn't give size due to \"array decay\"\n");
+    printf("%d\n", sizeof(parry));
+    printf("(The size of a pointer in C is always 8 bytes)\n");
 }

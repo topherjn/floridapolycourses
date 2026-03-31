@@ -28,9 +28,9 @@ int main(void) {
     // Step 2: Find and report the closest threat
     int closest = find_closest(distances, SIZE);
     printf("=== Closest Threat ===\n");
-    printf("ID: %d\n",           ids[closest]);
+    printf("ID: %d\n", ids[closest]);
     printf("Distance: %.2f AU\n", distances[closest]);
-    printf("Mass: %.2f\n",        masses[closest]);
+    printf("Mass: %.2f\n", masses[closest]);
     printf("Ice: %d%%  Silicate: %d%%  Iron: %d%%\n",
            composition[closest][0],
            composition[closest][1],

@@ -1,15 +1,14 @@
 #include <stdio.h>
 
 #define SIZE 10
-#define NUM_COMPONENTS 3
 
 /* ===========================================================================
  * FUNCTION PROTOTYPES
  * =========================================================================== */
-void initialize_sensors(int ids[], float distances[], float masses[], int comp[][NUM_COMPONENTS], int size);
+void initialize_sensors(int ids[], float distances[], float masses[], int comp[][3], int size);
 int find_closest(float distances[], int size);
-void sort_threats(int ids[], float distances[], float masses[], int comp[][NUM_COMPONENTS], int size);
-void print_grid(int ids[], float distances[], float masses[], int comp[][NUM_COMPONENTS], int size);
+void sort_threats(int ids[], float distances[], float masses[], int comp[][3], int size);
+void print_grid(int ids[], float distances[], float masses[], int comp[][3], int size);
 
 
 /* ---------------------------------------------------------------------------
@@ -20,7 +19,7 @@ int main(void) {
     int   ids[SIZE];
     float distances[SIZE];
     float masses[SIZE];
-    int   composition[SIZE][NUM_COMPONENTS];
+    int   composition[SIZE][3];
 
     // Step 1: Load data
     initialize_sensors(ids, distances, masses, composition, SIZE);
@@ -55,7 +54,7 @@ int main(void) {
  *   size        - number of asteroids
  * --------------------------------------------------------------------------- */
 void initialize_sensors(int ids[], float distances[], float masses[],
-                         int comp[][NUM_COMPONENTS], int size) {
+                         int comp[][3], int size) {
     // Asteroid IDs
     ids[0]=1004; ids[1]=1007; ids[2]=1001; ids[3]=1009; ids[4]=1003;
     ids[5]=1006; ids[6]=1000; ids[7]=1008; ids[8]=1002; ids[9]=1005;
@@ -108,7 +107,7 @@ int find_closest(float distances[], int size) {
  * Parameters: all four arrays and size
  * --------------------------------------------------------------------------- */
 void sort_threats(int ids[], float distances[], float masses[],
-                  int comp[][NUM_COMPONENTS], int size) {
+                  int comp[][3], int size) {
     // TODO: Outer loop — find the position of the maximum mass
     //       in the unsorted portion (indices i through size-1).
     //
@@ -127,7 +126,7 @@ void sort_threats(int ids[], float distances[], float masses[],
  * Parameters: all four arrays and size
  * --------------------------------------------------------------------------- */
 void print_grid(int ids[], float distances[], float masses[],
-                int comp[][NUM_COMPONENTS], int size) {
+                int comp[][3], int size) {
     // TODO: Loop through all asteroids and printf each one.
     //       Format: ID: %d, Dist: %.2f, Mass: %.2f, Ice: %d%%, Silicate: %d%%, Iron: %d%%
     //       Access composition columns as comp[i][0], comp[i][1], comp[i][2]

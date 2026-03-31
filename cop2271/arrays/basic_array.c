@@ -3,6 +3,7 @@
 
 void print_array(int arr[], int size);
 void show_array(float *arr, int size);
+
 void pointer_print_arrays(char *parry, int size);
 
 int main(void)
@@ -23,7 +24,7 @@ int main(void)
     float measurements[] = {2.3,-1.0,3,3.14,-10.1};
 
     /* array of characters (!= a string) */
-    char characters[] = {'c', ':', '.', '\\', '#'};
+    char characters[] = {'c', ':', '.', '3', '\0'};
 
     /* traverse the arrays print out out each value */
     print_array(num_array, ARRAY_SIZE);

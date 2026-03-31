@@ -2,6 +2,47 @@
 
 #define SIZE 10
 
+/* ===========================================================================
+ * FUNCTION PROTOTYPES
+ * =========================================================================== */
+void initialize_sensors(int ids[], float distances[], float masses[], int comp[][3], int size);
+int find_closest(float distances[], int size);
+void sort_threats(int ids[], float distances[], float masses[], int comp[][3], int size);
+void print_grid(int ids[], float distances[], float masses[], int comp[][3], int size);
+
+
+/* ---------------------------------------------------------------------------
+ * main
+ * --------------------------------------------------------------------------- */
+int main(void) {
+    // Array declarations — do not modify these
+    int   ids[SIZE];
+    float distances[SIZE];
+    float masses[SIZE];
+    int   composition[SIZE][3];
+
+    // Step 1: Load data
+    initialize_sensors(ids, distances, masses, composition, SIZE);
+
+    // Step 2: Find and report the closest threat
+    int closest = find_closest(distances, SIZE);
+    printf("=== Closest Threat ===\n");
+    printf("ID: %d\n",           ids[closest]);
+    printf("Distance: %.2f AU\n", distances[closest]);
+    printf("Mass: %.2f\n",        masses[closest]);
+    printf("Ice: %d%%  Silicate: %d%%  Iron: %d%%\n",
+           composition[closest][0],
+           composition[closest][1],
+           composition[closest][2]);
+
+    // Step 3: Sort by mass and display full grid
+    sort_threats(ids, distances, masses, composition, SIZE);
+    printf("\n=== Threats Sorted by Mass (Highest to Lowest) ===\n");
+    print_grid(ids, distances, masses, composition, SIZE);
+
+    return 0;
+}
+
 /* ---------------------------------------------------------------------------
  * initialize_sensors
  * Populates all four parallel arrays with asteroid telemetry data.
@@ -89,36 +130,4 @@ void print_grid(int ids[], float distances[], float masses[],
     // TODO: Loop through all asteroids and printf each one.
     //       Format: ID: %d, Dist: %.2f, Mass: %.2f, Ice: %d%%, Silicate: %d%%, Iron: %d%%
     //       Access composition columns as comp[i][0], comp[i][1], comp[i][2]
-}
-
-/* ---------------------------------------------------------------------------
- * main
- * --------------------------------------------------------------------------- */
-int main(void) {
-    // Array declarations — do not modify these
-    int   ids[SIZE];
-    float distances[SIZE];
-    float masses[SIZE];
-    int   composition[SIZE][3];
-
-    // Step 1: Load data
-    initialize_sensors(ids, distances, masses, composition, SIZE);
-
-    // Step 2: Find and report the closest threat
-    int closest = find_closest(distances, SIZE);
-    printf("=== Closest Threat ===\n");
-    printf("ID: %d\n",           ids[closest]);
-    printf("Distance: %.2f AU\n", distances[closest]);
-    printf("Mass: %.2f\n",        masses[closest]);
-    printf("Ice: %d%%  Silicate: %d%%  Iron: %d%%\n",
-           composition[closest][0],
-           composition[closest][1],
-           composition[closest][2]);
-
-    // Step 3: Sort by mass and display full grid
-    sort_threats(ids, distances, masses, composition, SIZE);
-    printf("\n=== Threats Sorted by Mass (Highest to Lowest) ===\n");
-    print_grid(ids, distances, masses, composition, SIZE);
-
-    return 0;
 }

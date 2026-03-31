@@ -51,7 +51,7 @@ int main(void) {
  *   ids[]       - asteroid ID numbers
  *   distances[] - distance from Earth in AU
  *   masses[]    - mass in kg (x10^9)
- *   comp[][3]   - composition: columns are Ice%, Silicate%, Iron%
+ *   comp[][NUM_COMPONENTS]   - composition: columns are Ice%, Silicate%, Iron%
  *   size        - number of asteroids
  * --------------------------------------------------------------------------- */
 void initialize_sensors(int ids[], float distances[], float masses[],
@@ -118,7 +118,8 @@ void sort_threats(int ids[], float distances[], float masses[],
     //         1. Swap masses[i]     and masses[max_idx]
     //         2. Swap distances[i]  and distances[max_idx]
     //         3. Swap ids[i]        and ids[max_idx]
-    //         4. Loop k from 0 to 2: swap comp[i][k] and comp[max_idx][k]
+    //         4. Loop k from 0 to NUM_COMPONENTS - 1: swap comp[i][k] and 
+    //            comp[max_idx][k]
 }
 
 /* ---------------------------------------------------------------------------

@@ -2,6 +2,58 @@
 #include <stdlib.h>
 #include <time.h>
 
+/* utility functions */
+int wait_for_step();
+void print_array(int arr[], int size);
+void generate_data(int arr[], int size);
+
+/* sorting algorithms */
+void demo_bubble_sort(int arr[], int size);
+void demo_selection_sort(int arr[], int size);
+void demo_insertion_sort(int arr[], int size);
+
+
+int main() {
+
+    srand(time(NULL));
+    int data[5];
+    int choice = 0;
+
+    while (choice != 4) {
+        printf("\n======================================================\n");
+        printf(" SORTING ALGORITHM DEMONSTRATOR\n");
+        printf("======================================================\n");
+        printf("1. Bubble Sort\n");
+        printf("2. Selection Sort\n");
+        printf("3. Insertion Sort\n");
+        printf("4. Quit\n");
+        printf("Select an option (1-4): ");
+
+        int items_read = scanf("%d", &choice);
+        
+        // Unconditionally clear the input buffer after reading
+        while (getchar() != '\n');
+
+        if (items_read != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            choice = 0; // Reset choice so the loop continues safely
+        } else if (choice == 1) {
+            generate_data(data, 5);
+            demo_bubble_sort(data, 5);
+        } else if (choice == 2) {
+            generate_data(data, 5);
+            demo_selection_sort(data, 5);
+        } else if (choice == 3) {
+            generate_data(data, 5);
+            demo_insertion_sort(data, 5);
+        } else if (choice != 4) {
+            printf("Invalid choice. Please select 1-4.\n");
+        }
+    }
+
+    return 0;
+}
+
 int wait_for_step() {
     printf("Press [Enter] to continue, or [q] to quit to menu: ");
     int ch = getchar();
@@ -30,6 +82,7 @@ void generate_data(int arr[], int size) {
     }
 }
 
+/* BUBBLE */
 void demo_bubble_sort(int arr[], int size) {
     printf("\n*** BEGINNING BUBBLE SORT ***\n");
     print_array(arr, size);
@@ -60,6 +113,7 @@ void demo_bubble_sort(int arr[], int size) {
     print_array(arr, size);
 }
 
+/* SELECTION */
 void demo_selection_sort(int arr[], int size) {
     printf("\n*** BEGINNING SELECTION SORT ***\n");
     print_array(arr, size);
@@ -98,6 +152,7 @@ void demo_selection_sort(int arr[], int size) {
     print_array(arr, size);
 }
 
+/* INSERTION */
 void demo_insertion_sort(int arr[], int size) {
     printf("\n*** BEGINNING INSERTION SORT ***\n");
     print_array(arr, size);
@@ -129,44 +184,4 @@ void demo_insertion_sort(int arr[], int size) {
     }
     printf("\n*** INSERTION SORT COMPLETE ***\n");
     print_array(arr, size);
-}
-
-int main() {
-    srand(time(NULL));
-    int data[5];
-    int choice = 0;
-
-    while (choice != 4) {
-        printf("\n======================================================\n");
-        printf(" SORTING ALGORITHM DEMONSTRATOR\n");
-        printf("======================================================\n");
-        printf("1. Bubble Sort\n");
-        printf("2. Selection Sort\n");
-        printf("3. Insertion Sort\n");
-        printf("4. Quit\n");
-        printf("Select an option (1-4): ");
-
-        int items_read = scanf("%d", &choice);
-        
-        // Unconditionally clear the input buffer after reading
-        while (getchar() != '\n');
-
-        if (items_read != 1) {
-            printf("Invalid input. Please enter a number.\n");
-            choice = 0; // Reset choice so the loop continues safely
-        } else if (choice == 1) {
-            generate_data(data, 5);
-            demo_bubble_sort(data, 5);
-        } else if (choice == 2) {
-            generate_data(data, 5);
-            demo_selection_sort(data, 5);
-        } else if (choice == 3) {
-            generate_data(data, 5);
-            demo_insertion_sort(data, 5);
-        } else if (choice != 4) {
-            printf("Invalid choice. Please select 1-4.\n");
-        }
-    }
-
-    return 0;
 }

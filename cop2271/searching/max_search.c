@@ -25,7 +25,7 @@ int main(void)
 
     /* Ask for the index of the max value in the array */
     /* (For more complex data types in the future you'll usually do it 
-        in this more indirect way)*/
+        in this more indirect way) */
     int index_of_max = find_max_idx(numbers, 8);
 
     printf("\nnumbers[%d] has the max value of %d\n\n", 
@@ -38,9 +38,14 @@ int find_max(int arr[], int size)
     /* if you start at the beginning and check
        each value one at a time, then when you're
        at the beginning the first element is both 
-       the max and min value you have seen so far */
+       the max and min value you have seen SO FAR.
+       (We can't just pick a starting low number like
+       0 because, for instance, we might have negative
+       numbers as in this code example.) */
     int max = arr[0];
 
+    /* Now that you have a starting value just compare it
+       to the rest, and update when you find a new max */
     for(int i = 1; i < size; i++)
         /* first value that is bigger than 
            current max becomes new max*/

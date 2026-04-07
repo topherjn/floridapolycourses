@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-void print_matrix(int matrix[][3]);
-void print_3Dmatrix(int matrix[][3][4]);
+void print_matrix(int rows, int matrix[][3]);
+void print_3Dmatrix(int rows, int cols, int matrix[][3][4]);
 
 int main(void)
 {
@@ -15,7 +15,7 @@ int main(void)
         }
     }
 
-    print_matrix(matrix);
+    print_matrix(2, matrix);
 
     int matrix3D[2][3][4];
 
@@ -24,14 +24,14 @@ int main(void)
             for (int k = 0; k < 4; k++)
                 matrix3D[i][j][k] = i + j + k;  // fixed
 
-    print_3Dmatrix(matrix3D);
+    print_3Dmatrix(2,3,matrix3D);
 
     return 0;
 }
 
-void print_matrix(int matrix[][3])
+void print_matrix(int rows, int matrix[][3])
 {
-    for (int row = 0; row < 2; row++)
+    for (int row = 0; row < rows; row++)
     {
         for (int col = 0; col < 3; col++)
         {
@@ -41,12 +41,12 @@ void print_matrix(int matrix[][3])
     }
 }
 
-void print_3Dmatrix(int matrix[][3][4])
+void print_3Dmatrix(int rows, int cols, int matrix[][3][4])
 {
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < rows; i++)
     {
         printf("Layer %d:\n", i);
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < cols; j++)
         {
             for (int k = 0; k < 4; k++)
             {

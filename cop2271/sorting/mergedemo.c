@@ -4,7 +4,7 @@ void merge(int arr[], int l, int m, int r);
 void mergeSort(int arr[], int l, int r);
 
 int main() {
-    int arr[] = {12, 11, 13, 5, 6, 7};
+    int arr[] = {6,2,7,3,8,4,9,1};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     mergeSort(arr, 0, n - 1);

@@ -5,7 +5,7 @@ static int partition(int arr[], int low, int high);
 void quicksort(int arr[], int low, int high);
 
 int main(void) {
-    int arr[] = {21,2,13,3,1,5,8};
+    int arr[] = {5, 3, 8, 1, 4, 9, 2, 7};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     printf("Before: ");

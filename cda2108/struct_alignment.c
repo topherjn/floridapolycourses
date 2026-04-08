@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<malloc.h>
 
 struct FatStruct 
 {
@@ -26,4 +27,13 @@ int main()
     struct ThinStruct thinStruct;
 
     printf("%d\n",sizeof(thinStruct));
+
+    /* extra stuff */
+    struct FatStruct *patStruct = (struct FatStruct *) malloc(sizeof(struct FatStruct));
+
+    patStruct->d = 2.2;
+
+    printf("%lf\n", patStruct->d);
+
+    free(patStruct);
 }

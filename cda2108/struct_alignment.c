@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<malloc.h>
 
+/* see slides for byte sizes and padding */
 struct FatStruct 
 {
     char a;
@@ -28,12 +29,24 @@ int main()
 
     printf("%d\n",sizeof(thinStruct));
 
-    /* extra stuff
-    struct FatStruct *patStruct = (struct FatStruct *) malloc(sizeof(struct FatStruct));
+    /* extra stuff */
+    /* Introduction to or refreshing on C structs and malloc */
+    struct FatStruct *fatStructs = (struct FatStruct *) malloc(sizeof(struct FatStruct) * 10);
 
-    patStruct->d = 2.2;
+    int x = 0;
 
-    printf("%lf\n", patStruct->d);
+    for(struct FatStruct *p = fatStructs; p < (fatStructs + 10); p++)
+    {
+        p->d = 1.0;
+        p->b = ++x;
+        p->a = 'T';
+        p->c = 'c';
+    }
 
-    free(patStruct); */
+    for(struct FatStruct *p = fatStructs; p < (fatStructs + 10); p++)
+    {
+        printf("a: %c, b: %d, c: %c, d: %.1f\n", p->a, p->b, p->c, p->d);
+    }
+
+    free(fatStructs);
 }

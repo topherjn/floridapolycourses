@@ -1,8 +1,6 @@
 #include <stdio.h>
 
-void resetValue(int x) {
-    x = 0;
-}
+void resetValue(int x);
 
 int main() {
     
@@ -16,4 +14,8 @@ int main() {
     printf("Final status:   %d\n", status);
     
     return 0;
+}
+
+void resetValue(int x) {
+    x = 0;
 }

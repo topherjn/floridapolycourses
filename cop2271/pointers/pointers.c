@@ -1,27 +1,17 @@
 #include<stdio.h>
+#include<stdint.h>
 
 void no_swap(int left, int right);
 void swap_for_reals(int *left, int *right);
 
 int main(void)
 {
-    int capacity;
+    int score;
+    int level;
 
-    capacity = 4;
-
-    int *p;
-
-    p = &capacity;
-
-    printf("%d\n", *p);
-
-    (*p)++;
-
-    printf("%d\n", capacity);
-
-    *p++;
-
-    printf("%d %d\n", capacity, *p);
+    /* print out the memory locations for the integers */
+    printf("%p\n", &score);
+    printf("%p\n", &level);
 
     return 0;
 }

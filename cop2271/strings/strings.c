@@ -40,7 +40,11 @@ int main(void)
     char combine[20] = "port";
     strcat(combine, "manteau");
 
-    printf("\n%s", combine);
+    printf("\n%s\n", combine);
+
+    char *dupe = strdup("Hello, world!");
+
+    printf("%s, %d\n", dupe, strlen(dupe));
 
     return 0;
 }

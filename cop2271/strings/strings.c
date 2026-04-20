@@ -37,8 +37,8 @@ int main(void)
 
     printf("%s", string);
 
-    char combine[20] = "port";
-    strcat(combine, "manteau");
+    char combine[20] = "concat";
+    strcat(combine, "enate");
 
     printf("\n%s\n", combine);
 

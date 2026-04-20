@@ -37,5 +37,10 @@ int main(void)
 
     printf("%s", string);
 
+    char combine[20] = "port";
+    strcat(combine, "manteau");
+
+    printf("\n%s", combine);
+
     return 0;
 }

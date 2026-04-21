@@ -18,7 +18,7 @@ int main(void)
     return 0;
 }
 
-void print_asteroid(const struct asteroid *pasteroid)
+void print_asteroid(const ASTEROID_T *pasteroid)
 {
     printf("Asteroid ID %s:\n", pasteroid->id);
     printf("\tDistance: %.3f AU\n", pasteroid->distance);

@@ -61,7 +61,7 @@ int main(void)
 
     printf("\n%s", string);
 
-    /* strcat is how you concatenate (literally: "chaing together")*/
+    /* strcat is how you concatenate (literally: "chaining together")*/
     char combine[20] = "concat";
     strcat(combine, "enate");
 
@@ -72,7 +72,7 @@ int main(void)
        for the string is it assigned */
     char *dupe = strdup("Hello, world!");
 
-    printf("%s, %d\n", dupe, strlen(dupe));
+    printf("%s, %zu\n", dupe, strlen(dupe));
 
     /* but the created space is dynamic and should be freed
        when you're done using it */

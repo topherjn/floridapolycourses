@@ -19,13 +19,17 @@ int main(void)
 
     /* strlen tells you how many characters are in the string,
        not counting the nul termination character */
-    printf("Number of characters: %d\n",strlen(word));
+    printf("Number of characters: %zu\n",strlen(word));
+    /* zu is used as the placeholder because technically 
+       strlen returns a size_t.  %d would work most of 
+       the time but it's not official */
 
     /* these are immutable */
     char *string = "Bonjour";
     char *greeting = "Bonjour";
-    /* and they will point to the same address in the 
-       data segment */
+    /* and they will often point to the same address in the 
+       data segment, though this depends on compiler and optimations
+       (the practice is called "string literal pooling") */
     /* this is mutable */
     char salutation[] = "Bonjour";
 
@@ -42,6 +46,7 @@ int main(void)
     printf("%s has %d letters in it\n", string, strlen(string));
 
     /* demonstration that char array word is mutable */
+    /* what is the reason for the loop condition? */
     for(int i = 0; word[i] != '\0'; i++)
     {
         if(word[i] == '.') word[i] = '!';
@@ -50,11 +55,11 @@ int main(void)
     }
 
     /* the string called "string" is NOT mutable,
-       and attempting the following as unpredictable 
-       results */
+       and attempting the following as undefined 
+       behavior */
     //string[0] = 'T';
 
-    printf("%s", string);
+    printf("\n%s", string);
 
     /* strcat is how you concatenate (literally: "chaing together")*/
     char combine[20] = "concat";

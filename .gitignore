@@ -42,6 +42,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+.vscode
 # Temporary or backup files created by editors or tools
 *~
 \#*\#

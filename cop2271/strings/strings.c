@@ -67,6 +67,15 @@ int main(void)
 
     printf("\n%s\n", combine);
 
+    /* strncpy */
+    char source[20] = "copythisstring";
+    char destination[20];
+
+    strncpy(destination, source, 19);
+    destination[19] = '\0';
+
+    printf("DESTINAION: %s\n", destination);
+
     /* strdup is not standard C, but is often available 
        unlike the other string functions, it creates space
        for the string is it assigned */

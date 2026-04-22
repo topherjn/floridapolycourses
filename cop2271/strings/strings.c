@@ -83,6 +83,11 @@ int main(void)
 
     printf("%s, %zu\n", dupe, strlen(dupe));
 
+    /* Dupe is also mutable */
+    dupe[0] = 'X';
+
+    printf("Dupe: %s\n", dupe);
+
     /* but the created space is dynamic and should be freed
        when you're done using it */
     free(dupe);

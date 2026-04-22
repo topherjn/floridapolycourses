@@ -23,7 +23,7 @@ int load_asteroids(FILE *fp, Asteroid *arr, int capacity);
 
 
 int main(void) {
-    
+
     FILE *fp = fopen("asteroids.dat", "r");
     if (fp == NULL) {
         fprintf(stderr, "Error: could not open file.\n");
@@ -35,6 +35,12 @@ int main(void) {
     rewind(fp);  /* reset cursor to byte 0 for the second pass */
 
     Asteroid *field = (Asteroid *)malloc(count * sizeof(Asteroid));
+    if (field == NULL) {
+        fprintf(stderr, "Error: malloc failed.\n");
+        fclose(fp);
+        return 1;
+    }
+    
     int loaded = load_asteroids(fp, field, count);
     fclose(fp);
 

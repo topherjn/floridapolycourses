@@ -10,7 +10,7 @@ int main(void) {
 
     char word[64];
     while (fscanf(fp, "%63s", word) == 1) {
-        printf("%s\n", word);
+        fprintf(stdout,"%s\n", word);
     }
 
     fclose(fp);

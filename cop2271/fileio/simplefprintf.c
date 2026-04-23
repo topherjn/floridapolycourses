@@ -8,7 +8,7 @@ int main(void) {
         return EXIT_FAILURE;
     }
 
-    fprintf(fp, "hello world\n");
+    fprintf(fp, "foo world\n");
     fprintf(fp, "goodbye world\n");
 
     fprintf(stdout, "File contents written\n");

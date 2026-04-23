@@ -39,9 +39,9 @@ int main(void) {
 
     // Walk through pixels — BMP stores channels as BGR, not RGB
     for (long i = pixel_offset; i < size - 2; i += 3) {
-        buf[i]     = buf[i]     / 2;
-        buf[i + 1] = buf[i + 1] / 2;
-        buf[i + 2] = 255;
+        buf[i]     = 0;
+        //buf[i + 1] = buf[i + 1] / 2;
+        buf[i + 2] = 0;
     }
 
     // Write modified buffer to new file

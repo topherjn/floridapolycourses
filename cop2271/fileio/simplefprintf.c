@@ -11,6 +11,8 @@ int main(void) {
     fprintf(fp, "hello world\n");
     fprintf(fp, "goodbye world\n");
 
+    fprintf(stdout, "File contents written\n");
+
     fclose(fp);
     return EXIT_SUCCESS;
 }

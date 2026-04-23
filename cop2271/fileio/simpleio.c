@@ -1,24 +1,35 @@
 #include <stdio.h>
- 
+#include <stdlib.h>
+
 int main(void) {
-    char buf[256];
-    char newtext[256];
- 
-    /* Read and display */
-    FILE *fp = fopen("sample.txt", "r");
-    fgets(buf, sizeof(buf), fp);
+    // Write a file
+    FILE *fp = fopen("sample.txt", "w");
+    if (fp == NULL) {
+        perror("Could not open file for writing");
+        return EXIT_FAILURE;
+    }
+
+    for (int i = 1; i <= 5; i++) {
+        fprintf(fp, "Line %d\n", i);
+    }
     fclose(fp);
-    printf("File contains: %s\n", buf);
- 
-    /* Prompt user for text to append */
-    printf("Enter text to append: ");
-    fgets(newtext, sizeof(newtext), stdin);
- 
-    /* Append to file */
-    fp = fopen("sample.txt", "a");
-    fprintf(fp, "%s", newtext);
+
+    // Read it back
+    fp = fopen("sample.txt", "r");
+    if (fp == NULL) {
+        perror("Could not open file for reading");
+        return EXIT_FAILURE;
+    }
+
+    char buffer[64];
+    while (fgets(buffer, sizeof(buffer), fp) != NULL) {
+        printf("%s", buffer);
+    }
+
+    if (ferror(fp)) {
+        perror("Read error");
+    }
+
     fclose(fp);
- 
-    printf("Done.\n");
-    return 0;
+    return EXIT_SUCCESS;
 }

@@ -24,4 +24,4 @@ int main(void)
     return 0;
 }
 
-/* create your functions staring here */
+/* create your functions starting here */

@@ -5,7 +5,7 @@ int main(void) {
     int count = 0;
 
     while (!0) {
-        fp = fopen("sample.txt", "r");
+        fp = fopen("data.txt", "r");
         count++;
         if (fp == NULL) {
             printf("fopen failed at call #%d\n", count);
